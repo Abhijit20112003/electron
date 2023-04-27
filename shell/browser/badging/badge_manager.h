@@ -66,25 +66,6 @@ class BadgeManager : public KeyedService, public blink::mojom::BadgeService {
     int GetProcessId() { return process_id_; }
     int GetFrameId() { return frame_id_; }
 
-   private:
-    int process_id_;
-    int frame_id_;
-  };
-
-  // The BindingContext for ServiceWorkerGlobalScope execution contexts.
-  class ServiceWorkerBindingContext final : public BindingContext {
-   public:
-    ServiceWorkerBindingContext(int process_id, const GURL& scope)
-        : process_id_(process_id), scope_(scope) {}
-    ~ServiceWorkerBindingContext() override = default;
-
-    int GetProcessId() { return process_id_; }
-    GURL GetScope() { return scope_; }
-
-   private:
-    int process_id_;
-    GURL scope_;
-  };
 
 
 
