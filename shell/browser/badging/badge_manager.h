@@ -86,11 +86,6 @@ class BadgeManager : public KeyedService, public blink::mojom::BadgeService {
     GURL scope_;
   };
 
-  // blink::mojom::BadgeService:
-  // Note: These are private to stop them being called outside of mojo as they
-  // require a mojo binding context.
-  void SetBadge(blink::mojom::BadgeValuePtr value) override;
-  void ClearBadge() override;
 
 
  
