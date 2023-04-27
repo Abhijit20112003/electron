@@ -92,10 +92,5 @@ class BadgeManager : public KeyedService, public blink::mojom::BadgeService {
   void SetBadge(blink::mojom::BadgeValuePtr value) override;
   void ClearBadge() override;
 
-  // All the mojo receivers for the BadgeManager. Keeps track of the
-  // render_frame the binding is associated with, so as to not have to rely
-  // on the renderer passing it in.
-  mojo::ReceiverSet<blink::mojom::BadgeService, std::unique_ptr<BindingContext>>
-      receivers_;
 
  
