@@ -98,11 +98,4 @@ class BadgeManager : public KeyedService, public blink::mojom::BadgeService {
   mojo::ReceiverSet<blink::mojom::BadgeService, std::unique_ptr<BindingContext>>
       receivers_;
 
-  // Delegate which handles actual setting and clearing of the badge.
-  // Note: This is currently only set on Windows and MacOS.
-  // std::unique_ptr<BadgeManagerDelegate> delegate_;
-};
-
-}  // namespace badging
-
-#endif  // ELECTRON_SHELL_BROWSER_BADGING_BADGE_MANAGER_H_
+ 
